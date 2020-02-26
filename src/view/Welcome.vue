@@ -1,5 +1,5 @@
 <template>
-
+<ClientLayout>
   <div>
     <h1>Xin Chào Bách Khoa xấu xí</h1>
     <pre>
@@ -7,13 +7,16 @@
       <img src="../assets/pika.png"/>
     </pre>
   </div>
+</ClientLayout>
+
 </template>
 
 <script>
     import Component_1 from "@/components/Component_1";
+    import ClientLayout from "@/layout/ClientLayout";
     export default {
         name: "Welcome",
-      components: {Component_1},
+      components: {ClientLayout, Component_1},
     }
 </script>
 
