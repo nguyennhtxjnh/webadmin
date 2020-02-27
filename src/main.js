@@ -3,10 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Vuetify from 'vuetify';
+import Notificaton from 'vue-notification';
+import '@mdi/font/css/materialdesignicons.css';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+Vue.use(Vuetify, {
+  iconfont: 'mdi'
+});
+Vue.use(Notificaton)
 new Vue({
   el: '#app',
   router,

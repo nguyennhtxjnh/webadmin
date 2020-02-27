@@ -1,20 +1,27 @@
 <template>
-    <div>
+    <v-flex class="md12" style="background-color: coral">
+      <v-app>
+        <v-btn color="success">Success</v-btn>
+        <v-btn color="error">Error</v-btn>
+        <v-btn color="warning">Warning</v-btn>
+        <v-btn color="info">Info</v-btn>
+      </v-app>
       <v-toolbar
-        dark
+        fixed
         style="background-color: #42b983"
-      >  <v-row
-          justify="center"
-          no-gutters
-        >
-          <v-btn
-            v-for="link in links"
-            :key="link"
-            color="warning"
-          >
-            {{ link }}
-          </v-btn>
-        </v-row>
+        class="xs12 md12"
+      >
+        <v-layout row wrap >
+          <template
+            v-for="link in links" class="my-2">
+            <v-btn large flat="" color="error">
+              {{ link }}
+            </v-btn>
+          </template>
+
+        </v-layout>
+
+
         <v-toolbar-title>PIKACHU SHOES</v-toolbar-title>
 
         <v-spacer></v-spacer>
@@ -41,7 +48,7 @@
           </v-card-text>
         </v-card>
       </v-footer>
-    </div>
+    </v-flex>
 </template>
 
 <script>

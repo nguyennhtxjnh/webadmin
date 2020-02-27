@@ -1,11 +1,14 @@
 <template>
-  <div id="app" class="cusM">
-    <!--    <img src="./assets/logo.png">-->
-    <router-view :key="$router.fullPath" />
+  <v-app>
+    <div id="app" class="cusM">
+      <!--    <img src="./assets/logo.png">-->
+      <router-view :key="$router.fullPath" />
 
-    <notifications class="myCustom" group="foo"  position="top center" width="520"/>
+      <notifications class="myCustom" group="foo"  position="top center" width="520"/>
 
-  </div>
+    </div>
+  </v-app>
+
 </template>
 
 <script>
@@ -21,7 +24,6 @@ export default {
         -moz-osx-font-smoothing: grayscale;
         /*text-align: center;*/
         /*color: #2c3e50;*/
-        margin-top: 60px;
       }
 .myCustom {
   margin-top: 80px;
