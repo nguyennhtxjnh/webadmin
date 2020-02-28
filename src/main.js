@@ -6,6 +6,7 @@ import router from './router'
 import Vuetify from 'vuetify';
 import Notificaton from 'vue-notification';
 import '@mdi/font/css/materialdesignicons.css';
+import 'vuetify/dist/vuetify.min.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.config.productionTip = false

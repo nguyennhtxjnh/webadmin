@@ -1,72 +1,74 @@
 <template>
-    <v-flex class="md12" style="background-color: coral">
-      <v-app>
-        <v-btn color="success">Success</v-btn>
-        <v-btn color="error">Error</v-btn>
-        <v-btn color="warning">Warning</v-btn>
-        <v-btn color="info">Info</v-btn>
-      </v-app>
-      <v-toolbar
-        fixed
-        style="background-color: #42b983"
-        class="xs12 md12"
-      >
-        <v-layout row wrap >
-          <template
-            v-for="link in links" class="my-2">
-            <v-btn large flat="" color="error">
-              {{ link }}
-            </v-btn>
-          </template>
+  <v-flex>
+      <v-container>
+          <v-toolbar fixed>
+            <v-layout row wrap>
+              <v-avatar>
+                <img src="../assets/pika.png"/>
+              </v-avatar>
 
-        </v-layout>
-
-
-        <v-toolbar-title>PIKACHU SHOES</v-toolbar-title>
-
-        <v-spacer></v-spacer>
-
-      </v-toolbar>
-      <v-content>
-        <v-flex class="mt-3"  >
-          <slot style="background-color: red"></slot>
-        </v-flex>
-      </v-content>
-      <v-footer
-        dark
-        padless
-        style="background-color: coral"
-      >
-        <v-card
-          flat
-          tile
-          class="indigo lighten-1 white--text text-center"
-        >
-
-          <v-card-text class="white--text">
-            {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-          </v-card-text>
-        </v-card>
-      </v-footer>
+              <h1 class="blue-grey--text mt-2 ml-3">Adorable shop </h1>
+              <v-spacer></v-spacer>
+            <template v-for="l in links">
+              <v-btn flat=""> {{l.name}}</v-btn>
+            </template>
+            </v-layout>
+          </v-toolbar>
+      </v-container>
+    <v-content>
+    <v-flex class="mt-3" >
+      <slot></slot>
     </v-flex>
+  </v-content>
+    <div class="footer">
+      <v-container>
+        <v-layout row wrap>
+          <v-flex class="md4 itemfooter">
+            <h3 align="center">
+              STAY CONNECTED
+            </h3>
+          </v-flex>
+          <v-flex class="md4 itemfooter">
+            <h3 align="center">BE OUR FRIEND</h3>
+          </v-flex>
+          <v-flex class="md4 itemfooter">
+            <h3 align="center">NEED ASSISTANCE?</h3>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </div>
+  </v-flex>
 </template>
 
 <script>
     export default {
-        name: "ClientLayout",
+        name: "ClientLayout" ,
       data: () => ({
         links: [
-          'Home',
-          'About Us',
-          'Team',
-          'Services',
-          'Blog',
-          'Contact Us',
+          {'name':'home',
+          'url':'/home'},
+          {'name':'shop',
+            'url':'/shop'},
+          {'name':'sale',
+            'url':'/sale'},
+          {'name':'Blog',
+            'url':'/blog'},
+          {'name':'Contact Us',
+            'url':'/contact'},
+          {'name': 'cart',
+          'url': '/cart'}
         ],
       }),
     }
 </script>
 
 <style scoped>
+  .footer {
+    margin-bottom: 20px;
 
+  }
+  .itemfooter {
+    color: coral;
+    align-content: center;
+  }
 </style>
