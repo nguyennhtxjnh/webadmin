@@ -8,9 +8,12 @@
         <v-layout style="height: 100%" row wrap >
           <v-spacer></v-spacer>
           <v-flex class="md3" style="align-self: center" >
-              <v-btn  color="warning" align="center">
+            <form name="form1">
+              <v-btn  color="warning" align="center" name="test" ref="aa">
                 Please click me
               </v-btn>
+            </form>
+
           </v-flex>
           <v-spacer></v-spacer>
         </v-layout>
