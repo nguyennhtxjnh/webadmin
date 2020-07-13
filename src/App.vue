@@ -20,6 +20,7 @@ export default {
 <style>
   #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        background-color: #f0f4c3;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         /*text-align: center;*/

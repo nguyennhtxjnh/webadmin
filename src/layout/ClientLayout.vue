@@ -1,16 +1,16 @@
 <template>
   <v-flex>
       <v-container>
-          <v-toolbar fixed>
+          <v-toolbar fixed color="#bdc192">
             <v-layout row wrap>
               <v-avatar>
                 <img src="../assets/pika.png"/>
               </v-avatar>
 
-              <h1 class="blue-grey--text mt-2 ml-3">Adorable shop </h1>
+              <h1 class="black--text mt-2 ml-3">Adorable shop </h1>
               <v-spacer></v-spacer>
             <template v-for="l in links">
-              <v-btn flat=""> {{l.name}}</v-btn>
+              <v-btn flat=" " :to="l.url" > {{l.name}}</v-btn>
             </template>
             </v-layout>
           </v-toolbar>
@@ -20,7 +20,7 @@
       <slot></slot>
     </v-flex>
   </v-content>
-    <div class="footer">
+    <div class="footer" >
       <v-container>
         <v-layout row wrap>
           <v-flex class="md4 itemfooter">
@@ -47,8 +47,8 @@
         links: [
           {'name':'home',
           'url':'/home'},
-          {'name':'shop',
-            'url':'/shop'},
+          {'name':'detail',
+            'url':'/detail'},
           {'name':'sale',
             'url':'/sale'},
           {'name':'Blog',
@@ -65,10 +65,9 @@
 <style scoped>
   .footer {
     margin-bottom: 20px;
-
   }
   .itemfooter {
-    color: coral;
+    color: #000000;
     align-content: center;
   }
 </style>
