@@ -1,12 +1,15 @@
 <template>
-    <client-layout></client-layout>
+    <client-layout>
+      <detail></detail>
+    </client-layout>
 </template>
 
 <script>
     import ClientLayout from "../layout/ClientLayout";
+    import Detail from "../components/DetailComponent/Detail";
     export default {
         name: "men",
-      components: {ClientLayout}
+      components: {Detail, ClientLayout}
     }
 </script>
 
