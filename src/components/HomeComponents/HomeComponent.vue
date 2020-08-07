@@ -1,24 +1,14 @@
 <template>
-<!--    <v-img  height="100%"-->
-<!--            :src="require('@/assets/hinh.jpg')">-->
   <v-img height="100%"
-         src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg"
+         src="https://bulldog.vn/uploads/quangcao/adidas-superstar-gold-stamp-fv3284-bulldog-vn-1-png-20200513183914ENDevhQbSn.png"
   >
-      <v-container style="height: 100%">
-        <v-layout style="height: 100%" row wrap >
-          <v-spacer></v-spacer>
-          <v-flex class="md3" style="align-self: center" >
-            <form name="form1">
-              <v-btn  color="warning" align="center" name="test" ref="aa">
-                Please click me
+        <v-layout style="height: 100%; align-content: center" row wrap >
+            <v-spacer></v-spacer>
+              <v-btn  color="warning" outline name="test" ref="aa">
+                Shop now
               </v-btn>
-            </form>
-
-          </v-flex>
-          <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
         </v-layout>
-      </v-container>
-
     </v-img>
 </template>
 

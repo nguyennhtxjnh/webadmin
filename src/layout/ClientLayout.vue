@@ -1,27 +1,30 @@
 <template>
   <v-flex>
+<!--    header-->
       <v-container>
-          <v-toolbar fixed color="#bdc192">
+          <v-toolbar fixed color="#424242">
             <v-layout row wrap>
-              <v-avatar>
-                <img src="../assets/pika.png"/>
-              </v-avatar>
+                <v-avatar @click="$router.push('/')">
+                  <img src="../assets/pika.png"/>
+                </v-avatar>
+                <h1 class="white--text mt-2 ml-3" >Adorable shop </h1>
 
-              <h1 class="black--text mt-2 ml-3">Adorable shop </h1>
               <v-spacer></v-spacer>
             <template v-for="l in links">
-              <v-btn flat=" " :to="l.url" > {{l.name}}</v-btn>
+              <v-btn flat class="white--text" :to="l.url" > {{l.name}}</v-btn>
             </template>
             </v-layout>
           </v-toolbar>
       </v-container>
     <v-content>
-    <v-flex class="mt-3" >
+    <v-flex>
       <slot></slot>
     </v-flex>
-  </v-content>
+    </v-content>
+<!--    footer-->
     <div class="footer" >
       <v-container>
+        <v-divider class="pa-3"></v-divider>
         <v-layout row wrap>
           <v-flex class="md4 itemfooter">
             <h3 align="center">
@@ -36,6 +39,7 @@
           </v-flex>
         </v-layout>
       </v-container>
+      <h5 align="center" style="color: dimgrey">Copyright 2020 Adorable.vn</h5>
     </div>
   </v-flex>
 </template>
@@ -45,16 +49,16 @@
         name: "ClientLayout" ,
       data: () => ({
         links: [
-          {'name':'home',
-          'url':'/home'},
-          {'name':'detail',
-            'url':'/detail'},
+          {'name':'men',
+          'url':'/men'},
+          {'name':'women',
+            'url':'/women'},
           {'name':'sale',
             'url':'/sale'},
           {'name':'Blog',
             'url':'/blog'},
-          {'name':'Contact Us',
-            'url':'/contact'},
+          {'name':'contact us',
+            'url':'/cu'},
           {'name': 'cart',
           'url': '/cart'}
         ],

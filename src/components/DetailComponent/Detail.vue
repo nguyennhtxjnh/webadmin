@@ -2,37 +2,16 @@
     <v-flex>
       <v-container>
         hi detail
-        {{listShoes}}
-        <v-card
-          max-width="400"
-          class="mx-auto"
-        >
-          <v-container class="pa-1">
-            <v-item-group
-              v-model="selected"
-              multiple
-            >
-              <v-row>
-                <v-col
-                  v-for="(item, i) in listShoes"
-                  :key="i"
-                  cols="12"
-                  md="6"
-                >
-                  <v-item v-slot:default="{ active, toggle }">
-                    <v-img
-                      :src="item.image"
-                      height="150"
-                      class="text-right pa-2"
-                      @click="toggle"
-                    >
+        <v-card>
 
-                    </v-img>
-                  </v-item>
-                </v-col>
-              </v-row>
-            </v-item-group>
-          </v-container>
+           <v-layout row wrap>
+             <template v-for="shoes in listShoes">
+             <v-flex md 3>
+                <v-img :src="shoes.image"/>
+             </v-flex>
+             </template>
+           </v-layout>
+
         </v-card>
       </v-container>
     </v-flex>
@@ -64,7 +43,8 @@
 
         getListShoes(){
           this.loading = true;
-          Axios.get(`https://5f0c73b29d1e150016b38214.mockapi.io/api/products`)
+          Axios.get(`http://localhost:8702/api/products`,
+            {headers: {"Access-Control-Allow-Origin": "*"}})
             .then(response => {
               this.listShoes = response.data;
 
