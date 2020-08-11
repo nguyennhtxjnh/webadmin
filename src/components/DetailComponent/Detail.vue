@@ -1,29 +1,36 @@
 <template>
     <v-flex>
       <v-container>
-        {{pagination}}
-        <v-data-table
-          :items="listShoes"
-          :pagination.sync="pagination"
-          :no-data-text="'Không có dữ liệu'"
-          :no-results-text="'Không tìm thấy dữ liệu tương ứng'"
-          :must-sort="true"
-          hide-actions
-          hide-headers
-        >
+<!--        {{pagination}}-->
+<!--        <v-data-table-->
+<!--          :items="listShoes"-->
+<!--          :pagination.sync="pagination"-->
+<!--          :no-data-text="'Không có dữ liệu'"-->
+<!--          :no-results-text="'Không tìm thấy dữ liệu tương ứng'"-->
+<!--          :must-sort="true"-->
+<!--          hide-actions-->
+<!--          hide-headers-->
+<!--        >-->
            <v-layout row wrap>
-             <template #items="{shoes}">
-             <v-flex md 3>
-               <v-card height="300px" width="200px" class="mt-2">
+             <template v-for="shoes in listShoes">
+             <v-flex v-if="shoes.status = 'Còn hàng'" class="md4 pa-3">
+               <v-card height="auto" width="100%" class="mt-3 pa-2 pb-3">
                <v-img :src="shoes.image"/>
+                 <h5 class="text-truncate mt-1">{{shoes.name}}</h5>
+                 <span  v-if="shoes.newPrice == null" class="red--text" > {{shoes.oldPrice}}</span>
+                 <span v-else style="text-decoration: line-through" > {{shoes.oldPrice}}</span>
+                 <span v-if="shoes.newPrice != null" class="red--text">{{shoes.newPrice}}</span>
                </v-card>
              </v-flex>
              </template>
            </v-layout>
-        </v-data-table>
-        <div class="text-xs-center pt-2">
-          <v-pagination v-model="pagination.page" :length="Math.ceil(this.pagination.totalItems / this.pagination.rowsPerPage)"></v-pagination>
-        </div>
+<!--        </v-data-table>-->
+<!--        <div class="text-xs-center pt-2">-->
+<!--           <v-pagination v-model="page"-->
+<!--                          :page="page"-->
+<!--                          @input="reloadPage"-->
+<!--                          :length="pagination.totalItems"></v-pagination>-->
+<!--        </div>-->
       </v-container>
     </v-flex>
 </template>
@@ -60,10 +67,11 @@
 
         getListShoes(){
           this.loading = true;
-          Axios.get(`https://5f15682d4693a60016275775.mockapi.io/API/product`,)
-            // {headers: {"Access-Control-Allow-Origin": "*"}})
+          Axios.get(`http://192.168.120.48:8702/api/products`,
+            {headers: {"Access-Control-Allow-Origin": "*"}})
             .then(response => {
               this.listShoes = response.data;
+              this.pagination.totalItems = response.data.size();
             })
             .catch(console.error)
             .finally(() => {

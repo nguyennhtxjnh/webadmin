@@ -5,6 +5,7 @@ import sale from "@/view/sale";
 import men from "@/view/men";
 import women from "@/view/women";
 import blog from "@/view/blog";
+import contractus from "@/view/contractus";
 import cart from "@/view/cart";
 import Welcome from "@/view/Welcome";
 import DetailView from "../components/DetailComponent/DetailView";
@@ -44,6 +45,10 @@ export default new Router({
       name: 'cart1',
       component: cart
     },
-
+    {
+      path: '/cu',
+      name: 'cu',
+      component: contractus
+    },
   ]
 })
