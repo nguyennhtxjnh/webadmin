@@ -8,7 +8,7 @@ import blog from "@/view/blog";
 import contractus from "@/view/contractus";
 import cart from "@/view/cart";
 import Welcome from "@/view/Welcome";
-import DetailView from "../components/DetailComponent/DetailView";
+import ViewDetail from "../view/ViewDetail";
 
 Vue.use(Router)
 
@@ -49,6 +49,11 @@ export default new Router({
       path: '/cu',
       name: 'cu',
       component: contractus
+    },
+    {
+      path: '/viewDetail',
+      name: 'viewDetail',
+      component: ViewDetail
     },
   ]
 })

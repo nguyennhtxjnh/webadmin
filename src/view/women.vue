@@ -1,5 +1,8 @@
 <template>
-    <client-layout></client-layout>
+    <client-layout>
+      <h1 class="mt-3 align-center">Women</h1>
+      <detail></detail>
+    </client-layout>
 </template>
 
 <script>

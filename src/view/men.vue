@@ -1,5 +1,6 @@
 <template>
     <client-layout>
+      <h1>Men</h1>
       <detail></detail>
     </client-layout>
 </template>

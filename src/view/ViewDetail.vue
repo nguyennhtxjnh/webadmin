@@ -1,5 +1,6 @@
 <template>
     <ClientLayout>
+      <h1 class="my-3"> Detail </h1>
       <DetailInfo></DetailInfo>
     </ClientLayout>
 </template>

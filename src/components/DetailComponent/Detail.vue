@@ -13,9 +13,9 @@
 <!--        >-->
            <v-layout row wrap>
              <template v-for="shoes in listShoes">
-             <v-flex v-if="shoes.status = 'Còn hàng'" class="md4 pa-3">
-               <v-card height="auto" width="100%" class="mt-3 pa-2 pb-3">
-               <v-img :src="shoes.image"/>
+             <v-flex v-if="shoes.status = 'Còn hàng'" class="md4 pa-3" @click="$router.push('/viewDetail'  ) ">
+               <v-card height="auto" width="100%" class="mt-3 pa-2 pb-3" >
+               <v-img :src="shoes.image" />
                  <h5 class="text-truncate mt-1">{{shoes.name}}</h5>
                  <span  v-if="shoes.newPrice == null" class="red--text" > {{shoes.oldPrice}}</span>
                  <span v-else style="text-decoration: line-through" > {{shoes.oldPrice}}</span>
@@ -67,7 +67,7 @@
 
         getListShoes(){
           this.loading = true;
-          Axios.get(`http://192.168.120.48:8702/api/products`,
+          Axios.get(`http://localhost:8702/api/products`,
             {headers: {"Access-Control-Allow-Origin": "*"}})
             .then(response => {
               this.listShoes = response.data;
